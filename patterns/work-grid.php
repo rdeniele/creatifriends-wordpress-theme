@@ -3,14 +3,18 @@
  * Title: Work · Project Grid
  * Slug: creatifriends/work-grid
  * Categories: creatifriends-portfolio, featured
- * Description: Selected work as a 2-column project grid with category tags, titles, and replaceable cover images.
+ * Description: Selected work as a 3-column project grid with category tags, titles, and replaceable cover images.
  * Keywords: portfolio, work, projects, case studies
  * Viewport Width: 1400
  */
-$work_1 = 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1600&q=80';
-$work_2 = 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80';
-$work_3 = 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80';
-$work_4 = 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80';
+$projects = array(
+	array( 'title' => 'Nova Branding',     'eyebrow' => 'Branding · Identity',   'blurb' => 'A full identity rebuild for a satellite-imagery startup defining a new category.',                'img' => 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1600&q=80', 'slug' => 'nova-branding' ),
+	array( 'title' => 'Drift Studio',      'eyebrow' => 'Web · Editorial',       'blurb' => 'An editorial site and CMS for a design publication launching its first print issue.',             'img' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80', 'slug' => 'drift-studio' ),
+	array( 'title' => 'Flux AI Campaign',  'eyebrow' => 'AI Content · Video',    'blurb' => 'A generative-content launch campaign — 40+ assets across video, social, and print.',              'img' => 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80', 'slug' => 'flux-ai-campaign' ),
+	array( 'title' => 'Lumen UI System',   'eyebrow' => 'UI/UX · Product',       'blurb' => 'A design system and component library powering a public-company product relaunch.',               'img' => 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80', 'slug' => 'lumen-ui-system' ),
+	array( 'title' => 'Atlas Identity',    'eyebrow' => 'Branding · Packaging',  'blurb' => 'A maker brand built from a single word — identity, packaging, and a flagship online store.',     'img' => 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80', 'slug' => 'atlas-identity' ),
+	array( 'title' => 'Zenith Creative',   'eyebrow' => 'Brand Film · Motion',   'blurb' => 'A 90-second brand film and motion system for a peer-to-peer money app entering Europe.',          'img' => 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80', 'slug' => 'zenith-creative' ),
+);
 ?>
 <!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--50)">
@@ -21,7 +25,7 @@ $work_4 = 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=for
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 		<div class="wp-block-group">
 
-			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"600px"}} -->
+			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained","contentSize":"640px"}} -->
 			<div class="wp-block-group">
 				<!-- wp:paragraph {"className":"cf-eyebrow"} --><p class="cf-eyebrow">— Selected Work</p><!-- /wp:paragraph -->
 				<!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--huge)","fontWeight":"600","letterSpacing":"-0.035em","lineHeight":"1.02"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
@@ -41,68 +45,25 @@ $work_4 = 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=for
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}},"layout":{"type":"grid","columnCount":2,"minimumColumnWidth":null}} -->
+		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
 		<div class="wp-block-group">
 
+<?php foreach ( $projects as $project ) : ?>
 			<!-- wp:group {"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group">
 				<!-- wp:image {"sizeSlug":"large","linkDestination":"custom","style":{"border":{"radius":"20px"}}} -->
-				<figure class="wp-block-image size-large has-custom-border"><a href="/work/orbital-studio"><img src="<?php echo esc_url( $work_1 ); ?>" alt="Orbital Studio — brand and web rebuild" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%"/></a></figure>
+				<figure class="wp-block-image size-large has-custom-border"><a href="/work/<?php echo esc_attr( $project['slug'] ); ?>"><img src="<?php echo esc_url( $project['img'] ); ?>" alt="<?php echo esc_attr( $project['title'] ); ?> — <?php echo esc_attr( $project['eyebrow'] ); ?>" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%"/></a></figure>
 				<!-- /wp:image -->
 				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40)">
-					<!-- wp:paragraph {"className":"cf-eyebrow"} --><p class="cf-eyebrow">Branding · Web</p><!-- /wp:paragraph -->
-					<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} --><h3 class="wp-block-heading" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--x-large)"><a href="/work/orbital-studio" style="color:inherit;text-decoration:none">Orbital Studio</a></h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)","lineHeight":"1.6"}}} --><p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small);line-height:1.6">A category-defining identity and editorial site for a satellite imagery startup.</p><!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"cf-eyebrow"} --><p class="cf-eyebrow"><?php echo esc_html( $project['eyebrow'] ); ?></p><!-- /wp:paragraph -->
+					<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} --><h3 class="wp-block-heading" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--x-large)"><a href="/work/<?php echo esc_attr( $project['slug'] ); ?>" style="color:inherit;text-decoration:none"><?php echo esc_html( $project['title'] ); ?></a></h3><!-- /wp:heading -->
+					<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)","lineHeight":"1.6"}}} --><p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small);line-height:1.6"><?php echo esc_html( $project['blurb'] ); ?></p><!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 			</div>
 			<!-- /wp:group -->
-
-			<!-- wp:group {"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group">
-				<!-- wp:image {"sizeSlug":"large","linkDestination":"custom","style":{"border":{"radius":"20px"}}} -->
-				<figure class="wp-block-image size-large has-custom-border"><a href="/work/north-coast"><img src="<?php echo esc_url( $work_2 ); ?>" alt="North Coast Coffee — packaging and storefront" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%"/></a></figure>
-				<!-- /wp:image -->
-				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-				<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40)">
-					<!-- wp:paragraph {"className":"cf-eyebrow"} --><p class="cf-eyebrow">Identity · Packaging</p><!-- /wp:paragraph -->
-					<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} --><h3 class="wp-block-heading" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--x-large)"><a href="/work/north-coast" style="color:inherit;text-decoration:none">North Coast Coffee</a></h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)","lineHeight":"1.6"}}} --><p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small);line-height:1.6">A specialty roaster's full rebrand — packaging, storefront, and an e-commerce flagship.</p><!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group">
-				<!-- wp:image {"sizeSlug":"large","linkDestination":"custom","style":{"border":{"radius":"20px"}}} -->
-				<figure class="wp-block-image size-large has-custom-border"><a href="/work/loop-mobile"><img src="<?php echo esc_url( $work_3 ); ?>" alt="Loop Mobile — app design and launch" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%"/></a></figure>
-				<!-- /wp:image -->
-				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-				<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40)">
-					<!-- wp:paragraph {"className":"cf-eyebrow"} --><p class="cf-eyebrow">UI/UX · Motion</p><!-- /wp:paragraph -->
-					<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} --><h3 class="wp-block-heading" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--x-large)"><a href="/work/loop-mobile" style="color:inherit;text-decoration:none">Loop Mobile</a></h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)","lineHeight":"1.6"}}} --><p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small);line-height:1.6">Product design and launch motion for a peer-to-peer money app's category push.</p><!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group">
-				<!-- wp:image {"sizeSlug":"large","linkDestination":"custom","style":{"border":{"radius":"20px"}}} -->
-				<figure class="wp-block-image size-large has-custom-border"><a href="/work/atlas-ai"><img src="<?php echo esc_url( $work_4 ); ?>" alt="Atlas AI — brand and content system" style="border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%"/></a></figure>
-				<!-- /wp:image -->
-				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-				<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40)">
-					<!-- wp:paragraph {"className":"cf-eyebrow"} --><p class="cf-eyebrow">AI Content · Web</p><!-- /wp:paragraph -->
-					<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} --><h3 class="wp-block-heading" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--x-large)"><a href="/work/atlas-ai" style="color:inherit;text-decoration:none">Atlas AI</a></h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)","lineHeight":"1.6"}}} --><p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small);line-height:1.6">An AI research lab's editorial system — content pipeline, voice, and a publishing site.</p><!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
+<?php endforeach; ?>
 
 		</div>
 		<!-- /wp:group -->

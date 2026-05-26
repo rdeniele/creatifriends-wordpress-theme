@@ -496,6 +496,72 @@ textarea:focus-visible,
 }
 .cf-newsletter input { flex: 1; min-width: 0; }
 
+/* ---------- Contact form (pattern: creatifriends/contact-form) ---------- */
+.cf-contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+.cf-contact-form .cf-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.cf-contact-form label {
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--x-small);
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	color: var(--wp--preset--color--muted);
+	font-weight: 500;
+}
+.cf-contact-form select {
+	background: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: var(--cf-radius-md);
+	padding: 0.9rem 1.1rem;
+	font: inherit;
+	letter-spacing: 0.01em;
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, var(--wp--preset--color--muted) 50%),
+		linear-gradient(135deg, var(--wp--preset--color--muted) 50%, transparent 50%);
+	background-position: calc(100% - 18px) center, calc(100% - 12px) center;
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	padding-right: 2.5rem;
+}
+.cf-contact-form select:focus-visible {
+	border-color: var(--wp--preset--color--accent);
+	outline: none;
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--wp--preset--color--accent) 25%, transparent);
+}
+.cf-contact-submit {
+	margin-top: 0.5rem;
+	background: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--accent);
+	border-radius: 12px;
+	padding: 1rem 2rem;
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	cursor: pointer;
+	transition: all var(--cf-dur) var(--cf-ease);
+	align-self: flex-start;
+}
+.cf-contact-submit:hover,
+.cf-contact-submit:focus-visible {
+	background: var(--wp--preset--color--accent-hover);
+	border-color: var(--wp--preset--color--accent-hover);
+	color: var(--wp--preset--color--base);
+	transform: translateY(-1px);
+	box-shadow: var(--wp--preset--shadow--gold);
+}
+
 /* ---------- Focus rings ---------- */
 :where(a, button, [role="button"], .wp-block-button__link):focus-visible {
 	outline: 1px solid var(--wp--preset--color--accent);
