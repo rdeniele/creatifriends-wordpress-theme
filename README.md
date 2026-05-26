@@ -61,11 +61,10 @@ The theme ships with templates and patterns for the following pages. The homepag
 | Page     | Template                              | Pattern(s) used                                                                                          |
 | -------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Home     | `front-page.html`                     | `hero-headline`, `about-intro`, `services-grid`, `work-grid`, `testimonials`, `cta-banner`               |
-| About    | `page.html`                           | `about-intro`, `testimonials`, `cta-banner`                                                              |
-| Services | `page.html`                           | `services-grid`, `cta-banner`                                                                            |
-| Work     | `page.html`                           | `work-grid`, `cta-banner`                                                                                |
-| Contact  | `page.html`                           | `cta-banner` + a contact form of your choice                                                             |
-| Journal  | `home.html` / `index.html`            | (latest posts grid — no patterns)                                                                        |
+| About    | `page-about.html`                     | `about-intro`, `studio-story`, `studio-values`, `testimonials`, `cta-banner`                             |
+| Services | `page-services.html`                  | `services-grid`, `testimonials`, `cta-banner`                                                            |
+| Work     | `page-work.html`                      | `work-grid`, `testimonials`, `cta-banner`                                                                |
+| Contact  | `page-contact.html`                   | `contact-form`                                                                                           |
 | Post     | `single.html`                         | (single-post layout with comments)                                                                       |
 
 ## Pattern system
@@ -141,14 +140,18 @@ If your site is set to show the latest posts as the homepage, WordPress will sti
 ### Create About / Services / Work / Contact pages
 
 1. **Pages → Add New.**
-2. Title the page (e.g. "About"), give it a matching slug, and publish.
-3. Open the page in Site Editor.
-4. From the inserter, search **"CreatiFriends · "** and drop in the relevant section patterns (see the [Pages supported](#pages-supported) table for recommendations).
+2. Create pages with these titles and slugs:
+   - Title: "About" | Slug: `about` → uses `page-about.html`
+   - Title: "Services" | Slug: `services` → uses `page-services.html`
+   - Title: "Work" | Slug: `work` → uses `page-work.html`
+   - Title: "Contact" | Slug: `contact` → uses `page-contact.html`
+3. Publish each page (templates auto-assign based on slug).
+4. Edit in Site Editor if you want to customize the pattern composition.
 5. Save.
 
 ### Edit the navigation
 
-The header navigation is hardcoded with six custom links (Services, Studio, Work, Journal, Careers, Contact) to ensure the menu is correct on first activation. To edit:
+The header navigation is hardcoded with four primary links (Services, Studio, Work, Contact) to ensure the menu is correct on first activation. To edit:
 
 - **Site Editor → Patterns → Template Parts → Header.**
 - Click any nav link to edit label or URL, or add new links via the navigation block toolbar.

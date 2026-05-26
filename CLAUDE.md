@@ -74,7 +74,7 @@ All the actual footer markup lives in `patterns/footer-extended.php`. The templa
 
 ### Header navigation is hardcoded (not page-list)
 
-I started with `<!-- wp:page-list /-->` which auto-generates from published pages. I swapped it for explicit `<!-- wp:navigation-link -->` children with the six required items (Services, Studio, Work, Journal, Careers, Contact). Reason: on a fresh activation with no pages created, `page-list` renders an empty menu. Hardcoding the items guarantees the navigation is correct out of the box, and Site Editor still lets the user edit each link.
+I started with `<!-- wp:page-list /-->` which auto-generates from published pages. I swapped it for explicit `<!-- wp:navigation-link -->` children with the four primary items (Services, Studio, Work, Contact). Reason: on a fresh activation with no pages created, `page-list` renders an empty menu. Hardcoding the items guarantees the navigation is correct out of the box, and Site Editor still lets the user edit each link.
 
 ### Two header variants, one footer
 
@@ -240,10 +240,10 @@ That allows the following compositions, none of which required new templates:
 | Page              | Patterns composed                                              |
 | ----------------- | -------------------------------------------------------------- |
 | Home (front-page) | hero → about-intro → services-grid → work-grid → testimonials → cta-banner |
-| About             | (small hero) → about-intro → testimonials → cta-banner         |
-| Services          | (small hero) → services-grid → cta-banner                      |
-| Work              | (small hero) → work-grid → cta-banner                          |
-| Contact           | (small hero) → cta-banner + a contact form                     |
+| About             | about-intro → studio-story → studio-values → testimonials → cta-banner |
+| Services          | services-grid → testimonials → cta-banner                      |
+| Work              | work-grid → testimonials → cta-banner                          |
+| Contact           | contact-form                                                   |
 
 Block style variations (`is-style-card`, `is-style-glow-panel`, `is-style-outline-pill`) are the second reusability layer. Used inside patterns, they let any group or button reach into the design system without duplicating CSS.
 
