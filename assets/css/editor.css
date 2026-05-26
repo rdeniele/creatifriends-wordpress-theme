@@ -1,29 +1,56 @@
 /*
  * CreatiFriends — editor.css
- * Mirrors front-end polish inside the block editor so the WYSIWYG matches.
+ * Mirrors front-end polish inside the block editor.
  */
 
 .editor-styles-wrapper {
-	background: var(--wp--preset--color--surface);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--sans);
 }
 
 .editor-styles-wrapper .is-style-card {
-	background: var(--wp--preset--color--surface);
-	border: 1px dashed color-mix(in srgb, var(--wp--preset--color--contrast-2) 70%, transparent);
-	border-radius: 28px;
-	padding: clamp(1.5rem, 3vw, 2rem);
+	background: var(--wp--preset--color--elevated);
+	color: var(--wp--preset--color--contrast);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 20px;
+	padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .editor-styles-wrapper .is-style-card-dark {
 	background: var(--wp--preset--color--base);
 	color: var(--wp--preset--color--contrast);
-	border-radius: 28px;
-	padding: clamp(1.5rem, 3vw, 2rem);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 20px;
+	padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.editor-styles-wrapper .is-style-gradient-text {
-	background: var(--wp--preset--gradient--brand);
+.editor-styles-wrapper .is-style-glow-panel {
+	background: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 24px;
+}
+
+.editor-styles-wrapper .is-style-gradient-text,
+.editor-styles-wrapper .cf-accent {
+	background: var(--wp--preset--gradient--gold);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
+}
+
+.editor-styles-wrapper .cf-eyebrow {
+	font-size: var(--wp--preset--font-size--x-small);
+	text-transform: uppercase;
+	letter-spacing: 0.28em;
+	color: var(--wp--preset--color--accent);
+	font-weight: 500;
+}
+
+.editor-styles-wrapper .cf-glass {
+	background: rgba(10,10,10,0.35);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255,255,255,0.14);
+	border-radius: 24px;
 }

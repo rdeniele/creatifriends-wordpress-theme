@@ -3,73 +3,80 @@
  * Title: Hero · Headline
  * Slug: creatifriends/hero-headline
  * Categories: creatifriends-hero, featured
- * Description: Bold marquee hero with gradient headline, intro copy, and dual CTAs.
- * Keywords: hero, headline, intro, agency
+ * Description: Premium full-bleed hero with replaceable media, glass status badge, gold accent headline, and dual CTAs.
+ * Keywords: hero, headline, intro, agency, cover, landing
  * Block Types: core/post-content
  * Viewport Width: 1400
  */
+$hero_image = 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80';
 ?>
-<!-- wp:cover {"customGradient":"linear-gradient(135deg,#0B0B12 0%,#15151F 60%,#1B1430 100%)","minHeight":92,"minHeightUnit":"vh","contentPosition":"center center","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
-<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--50);min-height:92vh">
-	<span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background" style="background:linear-gradient(135deg,#0B0B12 0%,#15151F 60%,#1B1430 100%)"></span>
+<!-- wp:cover {"url":"<?php echo esc_url( $hero_image ); ?>","dimRatio":70,"overlayColor":"base","focalPoint":{"x":0.5,"y":0.5},"minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":true,"align":"full","className":"cf-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|90","right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-cover alignfull is-light cf-hero" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--90);padding-left:var(--wp--preset--spacing--50);min-height:100vh">
+	<span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim-70 has-background-dim"></span>
+	<img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( $hero_image ); ?>" data-object-fit="cover" data-object-position="50% 50%" style="object-position:50% 50%" />
 	<div class="wp-block-cover__inner-container">
 
-		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+		<!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"constrained","contentSize":"880px","justifyContent":"center"}} -->
 		<div class="wp-block-group alignwide">
 
-			<!-- wp:paragraph {"align":"left","textColor":"contrast-2","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)","textTransform":"uppercase","letterSpacing":"0.2em","fontWeight":"600"}}} -->
-			<p class="has-text-align-left has-contrast-2-color has-text-color" style="font-size:var(--wp--preset--font-size--small);font-weight:600;letter-spacing:0.2em;text-transform:uppercase">✦ Remote-first creative studio</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:group {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"0"}}} -->
+			<div class="wp-block-group">
+				<!-- wp:html -->
+				<span class="cf-hero__badge"><span class="cf-dot" aria-hidden="true"></span>Available for new projects · 2026</span>
+				<!-- /wp:html -->
+			</div>
+			<!-- /wp:group -->
 
-			<!-- wp:heading {"level":1,"textColor":"contrast","style":{"typography":{"fontSize":"var(--wp--preset--font-size--display)","lineHeight":"1.02"},"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
-			<h1 class="wp-block-heading has-contrast-color has-text-color" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40);font-size:var(--wp--preset--font-size--display);line-height:1.02">Brands, products and <span class="is-style-gradient-text" style="background:linear-gradient(135deg,#FF5B49 0%,#FFD166 50%,#7A5CFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent">stories</span> that move.</h1>
+			<!-- wp:heading {"textAlign":"center","level":1,"textColor":"contrast","style":{"typography":{"fontSize":"clamp(2.75rem, 8vw, 6.5rem)","fontWeight":"700","lineHeight":"0.98","letterSpacing":"-0.045em"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+			<h1 class="wp-block-heading has-text-align-center has-contrast-color has-text-color" style="margin-top:0;margin-bottom:0;font-size:clamp(2.75rem, 8vw, 6.5rem);font-style:normal;font-weight:700;letter-spacing:-0.045em;line-height:0.98">Creative Power for <span class="cf-accent">Modern</span> Brands</h1>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"textColor":"contrast-2","style":{"typography":{"fontSize":"var(--wp--preset--font-size--large)","lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} -->
-			<p class="has-contrast-2-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--50);font-size:var(--wp--preset--font-size--large);line-height:1.5">CreatiFriends is a tight, remote-first team designing brands, websites, UI/UX, AI content, video and social creative for ambitious companies.</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained","contentSize":"720px","justifyContent":"center"}} -->
+			<div class="wp-block-group">
 
-			<!-- wp:buttons {"layout":{"type":"flex"}} -->
-			<div class="wp-block-buttons">
-				<!-- wp:button {"backgroundColor":"accent","textColor":"contrast"} -->
-				<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-accent-background-color has-text-color has-background wp-element-button" href="/contact">Start a project →</a></div>
-				<!-- /wp:button -->
+				<!-- wp:paragraph {"align":"center","textColor":"contrast","style":{"typography":{"fontFamily":"var(--wp--preset--font-family--display)","fontSize":"var(--wp--preset--font-size--large)","fontWeight":"400","lineHeight":"1.5","letterSpacing":"-0.005em"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+				<p class="has-text-align-center has-contrast-color has-text-color" style="margin-top:0;margin-bottom:0;font-family:var(--wp--preset--font-family--display);font-size:var(--wp--preset--font-size--large);font-style:normal;font-weight:400;letter-spacing:-0.005em;line-height:1.5">We are a remote-first creative studio crafting bold branding, digital experiences, and content that helps businesses stand out.</p>
+				<!-- /wp:paragraph -->
 
-				<!-- wp:button {"textColor":"contrast","className":"is-style-outline-pill"} -->
-				<div class="wp-block-button is-style-outline-pill"><a class="wp-block-button__link has-contrast-color has-text-color wp-element-button" href="/work">See our work</a></div>
-				<!-- /wp:button -->
-			</div>
-			<!-- /wp:buttons -->
-
-			<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|60"}}} -->
-			<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--70)">
-
-				<!-- wp:group {"layout":{"type":"constrained"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading {"level":3,"textColor":"contrast","style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)","fontWeight":"600"}}} --><h3 class="wp-block-heading has-contrast-color has-text-color" style="font-size:var(--wp--preset--font-size--x-large);font-weight:600">12+ yrs</h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"contrast-2","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)"}}} --><p class="has-contrast-2-color has-text-color" style="font-size:var(--wp--preset--font-size--small)">Building digital brands</p><!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:group {"layout":{"type":"constrained"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading {"level":3,"textColor":"contrast","style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)","fontWeight":"600"}}} --><h3 class="wp-block-heading has-contrast-color has-text-color" style="font-size:var(--wp--preset--font-size--x-large);font-weight:600">180+</h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"contrast-2","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)"}}} --><p class="has-contrast-2-color has-text-color" style="font-size:var(--wp--preset--font-size--small)">Launches across 14 countries</p><!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:group {"layout":{"type":"constrained"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading {"level":3,"textColor":"contrast","style":{"typography":{"fontSize":"var(--wp--preset--font-size--x-large)","fontWeight":"600"}}} --><h3 class="wp-block-heading has-contrast-color has-text-color" style="font-size:var(--wp--preset--font-size--x-large);font-weight:600">100% remote</h3><!-- /wp:heading -->
-					<!-- wp:paragraph {"textColor":"contrast-2","style":{"typography":{"fontSize":"var(--wp--preset--font-size--small)"}}} --><p class="has-contrast-2-color has-text-color" style="font-size:var(--wp--preset--font-size--small)">9 timezones, one studio</p><!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
+				<!-- wp:paragraph {"align":"center","textColor":"muted","style":{"typography":{"fontSize":"var(--wp--preset--font-size--medium)","lineHeight":"1.6"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+				<p class="has-text-align-center has-muted-color has-text-color" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--medium);line-height:1.6">Design, strategy, and content creation — all built for the modern internet.</p>
+				<!-- /wp:paragraph -->
 
 			</div>
 			<!-- /wp:group -->
 
+			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"0","bottom":"0"}}}} -->
+			<div class="wp-block-buttons">
+				<!-- wp:button {"backgroundColor":"accent","textColor":"base","style":{"border":{"radius":"12px","width":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"borderColor":"accent"} -->
+				<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-accent-background-color has-text-color has-background has-border-color has-accent-border-color has-link-color wp-element-button" style="border-width:1px;border-radius:12px">Start a Project</a></div>
+				<!-- /wp:button -->
+
+				<!-- wp:button {"textColor":"contrast","className":"is-style-outline-pill"} -->
+				<div class="wp-block-button is-style-outline-pill"><a class="wp-block-button__link has-contrast-color has-text-color wp-element-button">View Our Work</a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+
+			<!-- wp:html -->
+			<div class="cf-hero__meta" role="list">
+				<span role="listitem">Branding</span>
+				<span class="cf-hero__meta-divider" aria-hidden="true"></span>
+				<span role="listitem">Web · UI/UX</span>
+				<span class="cf-hero__meta-divider" aria-hidden="true"></span>
+				<span role="listitem">AI Content</span>
+				<span class="cf-hero__meta-divider" aria-hidden="true"></span>
+				<span role="listitem">Video</span>
+				<span class="cf-hero__meta-divider" aria-hidden="true"></span>
+				<span role="listitem">Social</span>
+			</div>
+			<!-- /wp:html -->
+
 		</div>
 		<!-- /wp:group -->
+
+		<!-- wp:html -->
+		<span class="cf-hero__scroll" aria-hidden="true">Scroll</span>
+		<!-- /wp:html -->
 
 	</div>
 </div>

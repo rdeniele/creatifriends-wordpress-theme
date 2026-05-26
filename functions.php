@@ -59,10 +59,23 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\\setup' );
  * Enqueue front-end styles.
  */
 function enqueue_assets() {
+	// Preconnect to Google Fonts for faster handshake.
+	add_action( 'wp_head', function () {
+		echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+		echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+	}, 1 );
+
+	wp_enqueue_style(
+		'creatifriends-fonts',
+		'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap',
+		array(),
+		null
+	);
+
 	wp_enqueue_style(
 		'creatifriends-style',
 		get_stylesheet_uri(),
-		array(),
+		array( 'creatifriends-fonts' ),
 		CREATIFRIENDS_VERSION
 	);
 
