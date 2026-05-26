@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="CreatiFriends theme preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0B12"/>
+      <stop offset="100%" stop-color="#15151F"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF5B49"/>
+      <stop offset="100%" stop-color="#7A5CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="900" cy="200" r="280" fill="url(#brand)" opacity="0.6"/>
+  <circle cx="220" cy="720" r="220" fill="#FFD166" opacity="0.35"/>
+  <text x="80" y="460" font-family="Space Grotesk, Inter, sans-serif" font-size="120" font-weight="700" fill="#F6F5F0" letter-spacing="-4">CreatiFriends</text>
+  <text x="84" y="540" font-family="Inter, sans-serif" font-size="32" fill="#C9C7BE">A modern block theme for creative agencies.</text>
+</svg>

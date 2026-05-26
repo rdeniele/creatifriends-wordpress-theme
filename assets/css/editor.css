@@ -1,0 +1,29 @@
+/*
+ * CreatiFriends — editor.css
+ * Mirrors front-end polish inside the block editor so the WYSIWYG matches.
+ */
+
+.editor-styles-wrapper {
+	background: var(--wp--preset--color--surface);
+}
+
+.editor-styles-wrapper .is-style-card {
+	background: var(--wp--preset--color--surface);
+	border: 1px dashed color-mix(in srgb, var(--wp--preset--color--contrast-2) 70%, transparent);
+	border-radius: 28px;
+	padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.editor-styles-wrapper .is-style-card-dark {
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	border-radius: 28px;
+	padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.editor-styles-wrapper .is-style-gradient-text {
+	background: var(--wp--preset--gradient--brand);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
