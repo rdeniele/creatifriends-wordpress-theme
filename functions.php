@@ -156,25 +156,29 @@ function register_pattern_categories() {
 		'label'       => __( 'CreatiFriends · Hero', 'creatifriends' ),
 		'description' => __( 'Hero sections for landing pages.', 'creatifriends' ),
 	) );
+	register_block_pattern_category( 'creatifriends-about', array(
+		'label'       => __( 'CreatiFriends · About', 'creatifriends' ),
+		'description' => __( 'Studio intro and about sections.', 'creatifriends' ),
+	) );
 	register_block_pattern_category( 'creatifriends-services', array(
 		'label'       => __( 'CreatiFriends · Services', 'creatifriends' ),
-		'description' => __( 'Service grids and feature blocks.', 'creatifriends' ),
+		'description' => __( 'Service grids and capability blocks.', 'creatifriends' ),
 	) );
 	register_block_pattern_category( 'creatifriends-portfolio', array(
-		'label'       => __( 'CreatiFriends · Portfolio', 'creatifriends' ),
-		'description' => __( 'Case study and portfolio layouts.', 'creatifriends' ),
-	) );
-	register_block_pattern_category( 'creatifriends-cta', array(
-		'label'       => __( 'CreatiFriends · CTA', 'creatifriends' ),
-		'description' => __( 'Calls to action.', 'creatifriends' ),
+		'label'       => __( 'CreatiFriends · Work', 'creatifriends' ),
+		'description' => __( 'Project grids and case study layouts.', 'creatifriends' ),
 	) );
 	register_block_pattern_category( 'creatifriends-testimonial', array(
 		'label'       => __( 'CreatiFriends · Testimonials', 'creatifriends' ),
 		'description' => __( 'Testimonials and social proof.', 'creatifriends' ),
 	) );
-	register_block_pattern_category( 'creatifriends-team', array(
-		'label'       => __( 'CreatiFriends · Team', 'creatifriends' ),
-		'description' => __( 'Team members and culture.', 'creatifriends' ),
+	register_block_pattern_category( 'creatifriends-cta', array(
+		'label'       => __( 'CreatiFriends · CTA', 'creatifriends' ),
+		'description' => __( 'Calls to action.', 'creatifriends' ),
+	) );
+	register_block_pattern_category( 'creatifriends-footer', array(
+		'label'       => __( 'CreatiFriends · Footer', 'creatifriends' ),
+		'description' => __( 'Footer compositions.', 'creatifriends' ),
 	) );
 }
 add_action( 'init', __NAMESPACE__ . '\\register_pattern_categories' );
